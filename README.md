@@ -2,7 +2,7 @@
 
 ## Objectives
 
-- [] Practice English
+- [ ] Practice English
 
 ## Context
 
@@ -178,3 +178,49 @@ The client requires a solution to calculate the tax amount owed by their custome
 | Aggregate Root | The main entity within an aggregate that controls the consistency and integrity of other entities. Example: Client in the Investment Portfolio.                                | Ensures the consistency and integrity of aggregate elements.                                                 |
 | Services       | Perform business logic that does not belong to a specific entity or aggregate, such as calculating taxes or generating reports.                                                | Encapsulate business logic and operations, providing specific functionalities for the system.                |
 | Repositories   | Provide a means to store, retrieve, and manage entities, supporting the necessary operations to maintain data integrity in the system.                                         | Offer an interface for interacting with data, separating persistence logic from the system's business logic. |
+
+```mermaid
+
+graph TD
+    Domain[Domain: Area of knowledge or activity that the system is modeling.]
+    Subdomain1[Subdomain: Client Management]
+    Subdomain2[Subdomain: FOREX Operations Recording]
+    Subdomain3[Subdomain: Tax Report Generation]
+
+    Domain --> Subdomain1
+    Domain --> Subdomain2
+    Domain --> Subdomain3
+
+    Entity1[Entity: Client]
+    Entity2[Entity: Operation]
+
+    Subdomain1 --> Entity1
+    Subdomain2 --> Entity2
+
+    Aggregate[Aggregate: Investment Portfolio]
+    AggregateRoot[Aggregate Root: Client]
+    OperationList[Operation List]
+
+    Entity1 --> Aggregate
+    Aggregate --> AggregateRoot
+    Aggregate --> OperationList
+
+    Service1[Service: Tax Calculation Service]
+    Service2[Service: Report Generation Service]
+
+    Subdomain3 --> Service1
+    Subdomain3 --> Service2
+
+    Repository1[Repository: Client Repository]
+    Repository2[Repository: Operation Repository]
+
+    Entity1 --> Repository1
+    Entity2 --> Repository2
+
+    AggregateRoot --> |Ensures consistency and integrity of| Aggregate
+    Service1 --> |Encapsulates business logic| Domain
+    Service2 --> |Encapsulates business logic| Domain
+    Repository1 --> |Provides data operations| Domain
+    Repository2 --> |Provides data operations| Domain
+
+```
