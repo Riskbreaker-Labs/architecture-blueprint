@@ -64,33 +64,36 @@ The client requires a solution to calculate the tax amount owed by their custome
 
 #### Entity Client
 
-| Attributes | Description                                                         |
+Attributes:
+| Attributes | Description |
 | ---------- | ------------------------------------------------------------------- |
-| ID         | Unique identifier of the client (UUID)                              |
-| Name       | Full name of the client                                             |
-| CPF        | Cadastro de Pessoa Física, a unique identification number in Brazil |
-| Email      | Client's email address                                              |
-| Address    | Client's residential address                                        |
+| ID | Unique identifier of the client (UUID) |
+| Name | Full name of the client |
+| CPF | Cadastro de Pessoa Física, a unique identification number in Brazil |
+| Email | Client's email address |
+| Address | Client's residential address |
+
+Behaviors:
+| Behaviors | Description |
+| ------------ | ------------------------------------------------- |
+| updateData() | Allows updating the client's registration data |
+| delete() | Removes the client's registration from the system |
 
 ---
-
-| Behaviors    | Description                                       |
-| ------------ | ------------------------------------------------- |
-| updateData() | Allows updating the client's registration data    |
-| delete()     | Removes the client's registration from the system |
 
 #### Entity Operation
 
-| Attributes | Description                                                 |
+Attributes:
+| Attributes | Description |
 | ---------- | ----------------------------------------------------------- |
-| ID         | Unique identifier of the operation (UUID)                   |
-| Type       | Type of operation (Buy/Sell)                                |
-| Date       | Date the operation was performed                            |
-| Value      | Monetary value of the operation                             |
-| Currency   | Currency used in the operation                              |
-| ClientID   | Identifier of the client who performed the operation (UUID) |
+| ID | Unique identifier of the operation (UUID) |
+| Type | Type of operation (Buy/Sell) |
+| Date | Date the operation was performed |
+| Value | Monetary value of the operation |
+| Currency | Currency used in the operation |
+| ClientID | Identifier of the client who performed the operation (UUID) |
 
----
+Behaviors:
 
 | Behaviors | Description                   |
 | --------- | ----------------------------- |
@@ -98,19 +101,21 @@ The client requires a solution to calculate the tax amount owed by their custome
 | update()  | Updates an existing operation |
 | delete()  | Removes an operation          |
 
-#### Investment Portfolio Aggregate
-
-| Elements       | Description                           |
-| -------------- | ------------------------------------- |
-| Aggregate Root | Client (main entity of the aggregate) |
-| Operation List | Financial operations of the client    |
-
 ---
 
-| Behaviors          | Description                                                       |
+#### Investment Portfolio Aggregate
+
+Elements:
+| Elements | Description |
+| -------------- | ------------------------------------- |
+| Aggregate Root | Client (main entity of the aggregate) |
+| Operation List | Financial operations of the client |
+
+Behaviors:
+| Behaviors | Description |
 | ------------------ | ----------------------------------------------------------------- |
-| addOperation()     | Adds an operation to the client's portfolio                       |
-| removeOperation()  | Removes an operation from the client's portfolio                  |
+| addOperation() | Adds an operation to the client's portfolio |
+| removeOperation() | Removes an operation from the client's portfolio |
 | calculateBalance() | Calculates the total balance of the client's investment portfolio |
 
 ---
@@ -119,50 +124,56 @@ The client requires a solution to calculate the tax amount owed by their custome
 
 ### Tax Calculation Service
 
-| Methods                   | Description                              |
+Methods:
+| Methods | Description |
 | ------------------------- | ---------------------------------------- |
-| calculateMonthlyTax()     | Calculates the tax due monthly           |
+| calculateMonthlyTax() | Calculates the tax due monthly |
 | calculateAccumulatedTax() | Calculates the accumulated tax over time |
 
----
-
-| Business Rules    | Description                                         |
+Business Rules:
+| Business Rules | Description |
 | ----------------- | --------------------------------------------------- |
 | FOREX Regulations | Based on specific regulations for FOREX investments |
 
-### Report Generation Service
-
-| Methods             | Description                                           |
-| ------------------- | ----------------------------------------------------- |
-| generatePDF()       | Generates a report in PDF format                      |
-| sendEmail()         | Sends the report by email to the client               |
-| generateDashboard() | Creates an interactive dashboard with the report data |
-
 ---
 
-| Business Rules  | Description                                                               |
+### Report Generation Service
+
+Methods:
+| Methods | Description |
+| ------------------- | ----------------------------------------------------- |
+| generatePDF() | Generates a report in PDF format |
+| sendEmail() | Sends the report by email to the client |
+| generateDashboard() | Creates an interactive dashboard with the report data |
+
+Business Rules:
+| Business Rules | Description |
 | --------------- | ------------------------------------------------------------------------- |
 | Data Formatting | Guidelines defining how data should be formatted and presented to clients |
+
+---
 
 ## Definition of Repositories
 
 ### Client Repository
 
-| Methods         | Description                                         |
+Methods:
+| Methods | Description |
 | --------------- | --------------------------------------------------- |
-| saveClient()    | Saves client data in the system                     |
+| saveClient() | Saves client data in the system |
 | getClientById() | Retrieves client data using their unique identifier |
-| updateClient()  | Updates existing client data                        |
-| deleteClient()  | Removes client data from the system                 |
+| updateClient() | Updates existing client data |
+| deleteClient() | Removes client data from the system |
 
 ### Operation Repository
 
-| Methods            | Description                                          |
+Methods:
+| Methods | Description |
 | ------------------ | ---------------------------------------------------- |
-| saveOperation()    | Saves operation data in the system                   |
+| saveOperation() | Saves operation data in the system |
 | getOperationById() | Retrieves operation data using its unique identifier |
-| updateOperation()  | Updates existing operation data                      |
-| deleteOperation()  | Removes operation data from the system               |
+| updateOperation() | Updates existing operation data |
+| deleteOperation() | Removes operation data from the system |
 
 ## Concepts and Their Correlations
 
@@ -178,6 +189,8 @@ The client requires a solution to calculate the tax amount owed by their custome
 | Aggregate Root | The main entity within an aggregate that controls the consistency and integrity of other entities. Example: Client in the Investment Portfolio.                                | Ensures the consistency and integrity of aggregate elements.                                                 |
 | Services       | Perform business logic that does not belong to a specific entity or aggregate, such as calculating taxes or generating reports.                                                | Encapsulate business logic and operations, providing specific functionalities for the system.                |
 | Repositories   | Provide a means to store, retrieve, and manage entities, supporting the necessary operations to maintain data integrity in the system.                                         | Offer an interface for interacting with data, separating persistence logic from the system's business logic. |
+
+---
 
 ```mermaid
 
