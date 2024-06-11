@@ -1,0 +1,173 @@
+{
+  "main": {
+    "id": "da436a765274d3f0",
+    "type": "split",
+    "children": [
+      {
+        "id": "105ce0bc8c96f135",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bc94c66343710d36",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f42b82f10fdd257f",
+    "type": "split",
+    "children": [
+      {
+        "id": "9abd20f700b681ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1d3b8325fdaaa57d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "119a299e5d46b05a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9827406472093e90",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 230.5
+  },
+  "right": {
+    "id": "af32c82d0513f821",
+    "type": "split",
+    "children": [
+      {
+        "id": "59e1a6e40de21ecd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ecc643d6b4657b0",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "d10f88994d147648",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "e7f1917c58ff23e8",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a7d458cf2ea08401",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "bc94c66343710d36",
+  "lastOpenFiles": [
+    "README.md",
+    "docs/Client.md",
+    "docs/Client Management.md",
+    "docs/Client Repository.md",
+    "docs/Domain.md",
+    "docs/Entities and Aggregates.md",
+    "docs/Entity.md",
+    "docs/FOREX Operations Recording.md",
+    "docs/General Concepts.md",
+    "docs/Investment Portfolio Aggregate.md",
+    "docs/Operation.md",
+    "docs/Operation Repository.md",
+    "docs/Report Generation Service.md",
+    "docs/Repositories.md",
+    "docs/Repository.md",
+    "docs/Service.md",
+    "docs/Services.md",
+    "docs/Tax Report Generation.md",
+    "Untitled.canvas",
+    "docs/Tax Calculation Service.md",
+    "docs/Subdomains.md",
+    "docs/Subdomain.md",
+    "docs/Aggregate Root.md",
+    "docs/Aggregate.md",
+    "Operation Repository.md",
+    "docs",
+    "Repositories.md",
+    "Untitled 1.canvas",
+    "Untitled 2.canvas"
+  ]
+}
